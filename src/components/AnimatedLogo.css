@@ -1,0 +1,81 @@
+.animated-logo {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.code-bracket {
+  color: var(--accent);
+  animation: bracketFlash 2s ease-in-out infinite;
+  font-size: 0.9rem;
+}
+
+.code-bracket.opening {
+  animation-delay: 0s;
+}
+
+.code-bracket.closing {
+  animation-delay: 0.4s;
+}
+
+.logo-text {
+  color: var(--text);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  animation: textPulse 2s ease-in-out infinite;
+}
+
+@keyframes bracketFlash {
+  0%, 100% {
+    opacity: 1;
+    color: var(--accent);
+  }
+  50% {
+    opacity: 0.4;
+    color: var(--accent2);
+  }
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    letter-spacing: 0.05em;
+    transform: scale(1);
+  }
+  50% {
+    letter-spacing: 0.08em;
+    transform: scale(1.05);
+  }
+}
+
+/* Hover effect */
+.logo-container:hover {
+  animation: logoGlow 0.5s ease-in-out;
+}
+
+@keyframes logoGlow {
+  0% {
+    text-shadow: 0 0 0px rgba(124, 92, 252, 0);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(124, 92, 252, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(124, 92, 252, 0);
+  }
+}
